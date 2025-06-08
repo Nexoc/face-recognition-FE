@@ -107,16 +107,17 @@
           @click="startCapturing"
           :disabled="isCapturing || !cameraReady"
         >
-          <div v-if="isCapturing" class="button-content">
+          <span v-if="isCapturing" class="button-content">
             <div class="button-spinner"></div>
             <span>Capturing...</span>
-          </div>
-          <div v-else class="button-content">
+          </span>
+
+          <span v-else class="button-content">
             <svg viewBox="0 0 24 24" fill="currentColor" class="button-icon">
               <path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.41 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
             </svg>
             <span>Start Capture (5 Photos)</span>
-          </div>
+          </span>
         </button>
 
         <!-- Result -->
@@ -305,7 +306,6 @@ function createParticles() {
 .decoration-circle {
   position: absolute;
   border-radius: 50%;
-  blur: 3px;
 }
 
 .decoration-circle-1 {
@@ -314,7 +314,6 @@ function createParticles() {
   width: 400px;
   height: 400px;
   background: linear-gradient(45deg, rgba(66, 153, 225, 0.2), rgba(159, 122, 234, 0.2));
-  filter: blur(80px);
 }
 
 .decoration-circle-2 {
@@ -323,7 +322,6 @@ function createParticles() {
   width: 400px;
   height: 400px;
   background: linear-gradient(45deg, rgba(102, 126, 234, 0.2), rgba(237, 100, 166, 0.2));
-  filter: blur(80px);
 }
 
 .particles {
@@ -364,7 +362,6 @@ function createParticles() {
 
 .recognition-card {
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 40px 32px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -735,11 +732,11 @@ function createParticles() {
   .face-recognition-container {
     padding: 16px;
   }
-  
+
   .recognition-card {
     padding: 24px 20px;
   }
-  
+
   .header-title {
     font-size: 24px;
   }
